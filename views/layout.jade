@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href="/vendor/bootstrap/dist/css/bootstrap.css") 
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/vendor/angular/angular.js")
+    script(src="/vendor/angular-route/angular-route.js")
+    if env == 'development'
+      script(src="/javascripts/app.js")
+      for script in scripts
+        script(src="#{script}")
+    else
+        script(src="/all.js")
+
+    base(href="/")
+  body(ng-app='my_world')
+    block content
+    pre= env

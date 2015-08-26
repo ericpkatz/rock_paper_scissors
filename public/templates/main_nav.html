@@ -1,0 +1,6 @@
+<ul class="nav" ng-class=
+"{'nav-tabs': mode =='top', 'nav-pills': mode == 'bottom'}">
+    <li ng-hide="tab.hide()" ng-repeat="tab in tabs" ng-class="{'active': tab.selected()}">
+        <a href="{{tab.path}}">{{tab.title}}</a>
+    </li>
+</ul>
