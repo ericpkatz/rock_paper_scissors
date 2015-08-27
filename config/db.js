@@ -14,7 +14,10 @@ function connect(){
   if(_connection)
     return _connection;
   _connection = new Promise(function(resolve, reject){
-    mongoose.connect(process.env.CONN || "mongodb://localhost:27017/my_world");
+    var connString = process.env.CONN || "mongodb://localhost:27017/my_world";
+    if(process.env.NODE_ENV == 'test')
+      connString += "_test";
+    mongoose.connect(connString);
     mongoose.connection.on("open", function(){
         resolve(mongoose.connection.name);
     });
