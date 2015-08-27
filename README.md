@@ -1,11 +1,9 @@
 # express generator
 
-- npm install express-generator
-- express <name of your app>
+This app demonstrates some of the techniques you would need to build a MEAN application.
 
-#  TO DO
+Here are some of the features.
 
-- ability to delete a thing
-- editing a thing
-- indicate the active tab
-- add functionality for people
+- authentication using bearer tokens
+- request specs using supertest-as-promised
+- model specs

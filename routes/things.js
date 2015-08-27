@@ -24,7 +24,6 @@ router.post("/:id", checkAuthentication, function(req, res){
       thing.name = req.body.name;
       thing.price = req.body.price;
       return thing.save();
-    
     })
     .then(
       function(thing){

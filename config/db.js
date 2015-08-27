@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var Promise = require('bluebird');
 var Thing = mongoose.model('thing');
+var User = mongoose.model('user');
 
 module.exports = {
     connect: connect,
@@ -28,13 +29,16 @@ function seed(){
   return new Promise(function(resolve, reject){
     connect()
       .then( function(){
-        return Thing.remove({});
+        var thingsRemoval = Thing.remove({});
+        var userRemoval = User.remove({});
+        Promise.all([thingsRemoval, userRemoval]);
       })
       .then(function(){
-        return Thing.create([
+        var things = Thing.create([
           {
             name: 'Rock',
-            price: 1.50
+            price: 1.50,
+            onSale: true
           },
           {
             name: 'Paper',
@@ -45,9 +49,13 @@ function seed(){
             price: 2.50 
           }]
         );
+        var user = User.create({username: 'prof', password: 'pw'})
+        return Promise.all([things, user]);
+
+
       })
-      .then(function(things){
-        resolve(things); 
+      .then(function(results){
+        resolve({ things: results[0], user: results[1] }); 
       })
       .catch(function(err){
         reject(err);
