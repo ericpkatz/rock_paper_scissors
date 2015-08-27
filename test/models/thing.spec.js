@@ -22,4 +22,8 @@ describe('thing', function(){
   it('rock is in database', function(){
     expect(rock.name).to.eq('Rock');
   });
+
+  it('rock is on sale', function(){
+    expect(rock.onSale).to.eq(false);
+  });
 });
