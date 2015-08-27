@@ -24,6 +24,6 @@ describe('thing', function(){
   });
 
   it('rock is on sale', function(){
-    expect(rock.onSale).to.eq(false);
+    expect(rock.onSale).to.eq(true);
   });
 });
