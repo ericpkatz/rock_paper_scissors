@@ -1,6 +1,6 @@
 {
   "name": "my_app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "chai": "^3.2.0"
   },
-  "author": "",
+  "author": "Eric P. Katz",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/ericpkatz/week-13-ce-9053-summer/issues"
   },
-  "homepage": "https://github.com/ericpkatz/week-13-ce-9053-summer"
+  "homepage": "https://github.com/ericpkatz/week-13-ce-9053-summer",
+  "directories": {
+    "test": "test"
+  }
 }
